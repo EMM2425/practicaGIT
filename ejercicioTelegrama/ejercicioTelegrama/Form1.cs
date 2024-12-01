@@ -20,7 +20,7 @@ namespace ejercicioTelegrama
         private void btnCalcularPrecioEMM2425_Click(object sender, EventArgs e)
         {
             string textoTelegrama;
-            char tipoTelegrama = ' ';
+            char tipoTelegrama = 'o';
             int numPalabras_EMM2425 = 0;
             double coste;
             //Leo el telegrama
@@ -31,8 +31,10 @@ namespace ejercicioTelegrama
                 tipoTelegrama = 'u';
             }
             //Obtengo el número de palabras que forma el telegrama
-            numPalabras_EMM2425 = textoTelegrama.Length;
-            //Si el telegrama es ordinario
+            // Error: numPalabras_EMM2425 = textoTelegrama.Length;
+            string[] palabras = textoTelegrama.Split(' '); //separa las palabras y las introduce en una estructura
+            numPalabras_EMM2425 = palabras.Length; //Obtiene la longitud de la estructura, que será el número de palabras.
+                                                   //Si el telegrama es ordinario
             if (tipoTelegrama == 'o')
             {
                 if (numPalabras_EMM2425 <= 10)
